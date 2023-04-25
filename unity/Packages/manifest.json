@@ -2,6 +2,7 @@
   "dependencies": {
     "com.offlive.myty.myty-extension.3d": "https://github.com/Off-Live/myty-3d-avatar-extension.git?path=/Assets",
     "com.offlive.myty.myty-kit": "https://github.com/Off-Live/myty-kit.git?path=/Assets#pre-release/sdk-core-dev",
+    "com.offlive.myty.myty-sdk": "https://github.com/Off-Live/myty-sdk.git?path=/unity/Assets#pre-release/dev",
     "com.unity.collab-proxy": "1.15.16",
     "com.unity.feature.2d": "1.0.0",
     "com.unity.ide.rider": "3.0.13",

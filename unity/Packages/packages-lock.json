@@ -16,6 +16,13 @@
       },
       "hash": "cf741370eff703300d208343e13c4523c01fe928"
     },
+    "com.offlive.myty.myty-sdk": {
+      "version": "https://github.com/Off-Live/myty-sdk.git?path=/unity/Assets#pre-release/dev",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "ee244ef9ac846b7ae886cd8d41aa65cf130e35bd"
+    },
     "com.unity.2d.animation": {
       "version": "7.0.5",
       "depth": 1,
