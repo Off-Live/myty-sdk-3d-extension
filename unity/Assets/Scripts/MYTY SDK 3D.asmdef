@@ -1,0 +1,18 @@
+{
+    "name": "MYTYSDK3D",
+    "rootNamespace": "",
+    "references": [
+        "GUID:449bc5398af654da0a8c4b106656a6af",
+        "GUID:9513bc30d46ec4841a6fc8d80a91f1db",
+        "GUID:fd12bab6e96464cf698ceb7a8f4cf1a1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

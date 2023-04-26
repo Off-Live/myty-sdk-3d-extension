@@ -1,0 +1,27 @@
+{
+  "name": "com.offlive.myty.myty-sdk.3d",
+  "displayName": "MYTY SDK 3D Extension",
+  "description": "Avatar Development Kit for Social Metaverse. https://myty.space/",
+  "version": "0.1.0",
+  "unity": "2021.3",
+  "author": {
+    "name": "OFF LIVE PTE. LTD",
+    "email": "myty@off.live",
+    "url": "https://www.myty.space/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Off-Live/myty-sdk-3d-extension.git"
+  },
+  "keywords": [
+    "myty",
+    "myty-kit",
+    "myty-sdk",
+    "runtimes",
+    "3d"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://discord.gg/yvEVqPCu"
+  },
+}
