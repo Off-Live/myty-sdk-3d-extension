@@ -5,6 +5,7 @@ using System.Linq;
 using Avatar.Interface;
 using MYTYKit.AvatarImporter;
 using MYTYKit.MotionAdapters;
+using MYTYKit.MotionTemplates;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -114,6 +115,9 @@ namespace Avatar
                 avatar = avatar,
                 driver = driver
             };
+            var mapper = driver.transform.parent.parent.gameObject.GetComponentInChildren<MotionTemplateMapper>();
+            motionSource.motionTemplateMapperList.Add(mapper);
+            motionSource.UpdateMotionAndTemplates();
             SelectAvatar(avatarCollectionId, tokenId);
         }
 
