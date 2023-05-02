@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc917e30abc4135bced35e645a9db72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motionSource: {fileID: 0}
+  motionProcessor: {fileID: 7142988624829403445}
   m_loaderPrefab: {fileID: 5731670893656272267, guid: ee9e29f82bcc14b1aac97212453b1ce3, type: 3}
 --- !u!1 &457292504819560475
 GameObject:
@@ -208,6 +208,7 @@ Transform:
   - {fileID: 457292505840007805}
   - {fileID: 457292504232964464}
   - {fileID: 457292504678520437}
+  - {fileID: 323141112034738363}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -352,3 +353,48 @@ MonoBehaviour:
   m_avatarDownloader: {fileID: 457292504232964465}
   m_avatarManager: {fileID: 457292504678520426}
   motionSource: {fileID: 0}
+--- !u!1 &4477237373715311117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 323141112034738363}
+  - component: {fileID: 7142988624829403445}
+  m_Layer: 0
+  m_Name: MotionProcessor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &323141112034738363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4477237373715311117}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 457292504819560472}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7142988624829403445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4477237373715311117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e43beebcc04815922269fedd00944f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motionTemplateMapperList: []
