@@ -116,8 +116,7 @@ namespace Avatar
                 driver = driver
             };
             var mapper = driver.transform.parent.parent.gameObject.GetComponentInChildren<MotionTemplateMapper>();
-            motionSource.motionTemplateMapperList.Add(mapper);
-            motionSource.UpdateMotionAndTemplates();
+            motionProcessor.AddMotionTemplateMapper(mapper);
             SelectAvatar(avatarCollectionId, tokenId);
         }
 
