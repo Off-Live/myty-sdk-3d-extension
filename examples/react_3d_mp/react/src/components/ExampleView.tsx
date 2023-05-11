@@ -3,10 +3,11 @@ import { useEffect, useState, useContext } from 'react';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import { MYTYSDKContext, mytySDKContext} from "../context/MYTYSDKContext"
+import { CalibrationType, MYTYSDKContext, mytySDKContext} from "../context/MYTYSDKContext"
 import MYTYSDKView from './MYTYSDKView';
 import useCaptureRecord from '../hooks/useCaptureRecord';
 import Select from 'react-select';
+import { Slider, Typography } from '@mui/material';
 
 export type Asset = {
   tokenId: string,
@@ -14,10 +15,17 @@ export type Asset = {
 }
 
 function ExampleView() {
-  const { loadAvatar, selectAvatar, switchMode } = useContext(mytySDKContext) as MYTYSDKContext
+  const { loadAvatar, selectAvatar, switchMode, updateCalibration } = useContext(mytySDKContext) as MYTYSDKContext
   const { captureImage, stopRecordingVideo, startRecordingVideo } = useCaptureRecord();
   const [tokens, setTokens] = useState<Asset[]>([]);
   const [selectedToken, setSelectedToken] = useState<number>(0);
+
+  const [syncedBlinkScale, setSyncedBlinkScale] = useState<number>(50);
+  const [blinkScale, setBlinkScale] = useState<number>(100);
+  const [eyebrowScale, setEyebrowScale] = useState<number>(100);
+  const [pupilScale, setPupilScale] = useState<number>(100);
+  const [mouthXScale, setMouthXScale] = useState<number>(100);
+  const [mouthYScale, setMouthYScale] = useState<number>(100);
 
   useEffect(() => {
     setTokens(["100", "101"].map((id: string) =>
@@ -26,6 +34,36 @@ function ExampleView() {
   }, [])
 
   const avatarOptions = tokens.map((token, idx) => ({ value: idx, label: `PudgyPenguins${token.tokenId}`}))
+
+  const handleSyncedBlinkSlider = (event: Event, newValue: number | number[]) => {
+    setSyncedBlinkScale(newValue as number)
+    updateCalibration(CalibrationType.SyncedBlink, newValue as number / 100)
+  }
+
+  const handleBlinkSlider = (event: Event, newValue: number | number[]) => {
+    setBlinkScale(newValue as number)
+    updateCalibration(CalibrationType.Blink, newValue as number / 100)
+  };
+
+  const handleEyebrowSlider = (event: Event, newValue: number | number[]) => {
+    setEyebrowScale(newValue as number)
+    updateCalibration(CalibrationType.Eyebrow, newValue as number / 100)
+  };
+
+  const handlePupilSlider = (event: Event, newValue: number | number[]) => {
+    setPupilScale(newValue as number)
+    updateCalibration(CalibrationType.Pupil, newValue as number / 100)
+  };
+
+  const handleMouthXSlider = (event: Event, newValue: number | number[]) => {
+    setMouthXScale(newValue as number)
+    updateCalibration(CalibrationType.MouthX, newValue as number / 100)
+  };
+
+  const handleMouthYSlider = (event: Event, newValue: number | number[]) => {
+    setMouthYScale(newValue as number)
+    updateCalibration(CalibrationType.MouthY, newValue as number / 100)
+  };
 
   return (
     <Grid container spacing={2}>
@@ -47,6 +85,68 @@ function ExampleView() {
       </Grid>
       <Grid item xs={5}>
         <MYTYSDKView />
+      </Grid>
+      <Grid item xs={5}>
+        <Typography>
+          Synced Blink Slider
+        </Typography>
+        <Slider
+          value={syncedBlinkScale}
+          onChange={handleSyncedBlinkSlider}
+          step={1}
+          min={0}
+          max={100}
+        />
+        <Typography>
+          Blink Slider
+        </Typography>
+        <Slider
+          value={blinkScale}
+          onChange={handleBlinkSlider}
+          step={1}
+          min={0}
+          max={200}
+        />
+        <Typography>
+          Eyebrow Slider
+        </Typography>
+        <Slider
+          value={eyebrowScale}
+          onChange={handleEyebrowSlider}
+          step={1}
+          min={0}
+          max={200}
+        />
+        <Typography>
+          Pupil Slider
+        </Typography>
+        <Slider
+          value={pupilScale}
+          onChange={handlePupilSlider}
+          step={1}
+          min={0}
+          max={200}
+        />
+        <Typography>
+          MouthX Slider
+        </Typography>
+        <Slider
+          value={mouthXScale}
+          onChange={handleMouthXSlider}
+          step={1}
+          min={0}
+          max={200}
+        />
+        <Typography>
+          MouthY Slider
+        </Typography>
+        <Slider
+          value={mouthYScale}
+          onChange={handleMouthYSlider}
+          step={1}
+          min={0}
+          max={200}
+        />
       </Grid>
     </Grid>
   );
